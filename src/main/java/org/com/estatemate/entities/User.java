@@ -1,39 +1,31 @@
-package org.com.estatemate.entities;
-
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
 public class User {
 
-
-    @Setter
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter
-    @Getter
-    private String name;
-    @Setter
-    @Getter
+    @Column(unique = true)
+    private String username;
+
+    @Column(nullable = false)
+    private String password; // Hashed password
+
+    @Column(unique = true)
     private String email;
 
+    private String firstName;
 
+    private String lastName;
 
-    // Optional additional details
-    @Setter
-    @Getter
-    private String phoneNumber; // Can be a separate entity later
-    @Setter
-    @Getter
-    private String address;
-    @ManyToOne
+    @Enumerated(EnumType.STRING)
     private Role role;
-    // Getters and Setters (omitted for brevity)
 
+    // Getters and Setters
 
+    public enum Role {
+        USER, ADMIN, SUPER_ADMIN
+    }
 }

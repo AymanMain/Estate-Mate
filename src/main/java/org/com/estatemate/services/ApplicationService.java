@@ -3,7 +3,6 @@ package org.com.estatemate.services;
 import java.util.List;
 
 import org.com.estatemate.entities.Application;
-import org.com.estatemate.entities.Property;
 import org.com.estatemate.repositories.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

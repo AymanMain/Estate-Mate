@@ -1,20 +1,3 @@
-package org.com.estatemate.entities;
-
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
-import java.time.LocalDate;
-import javax.persistence.Column; // For additional field configuration
-import javax.persistence.Enumerated;
-import javax.persistence.EnumType;
-
-@Setter
-@Getter
 @Entity
 public class Application {
 
@@ -22,25 +5,28 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Application Details
-    private String message; // Optional message from applicant
-    private LocalDate applicationDate = LocalDate.now(); // Date application was submitted
+    private String title;
+
+    private String description;
 
     @Enumerated(EnumType.STRING)
-    private ApplicationStatus status; // PENDING, APPROVED, REJECTED
+    private ApplicationStatus status;
 
-    // Relationships
+    private String message;
+
+    // Consider storing the path or reference to the contract file
+    private String contract;
+
+    private LocalDateTime contractExpirationDate;
+
+    private String[] images;
+
     @ManyToOne
-    private User applicant; // The User applying for the property
+    private User owner;
 
-    @ManyToOne
-    private Property property; // The Property the application is submitted for
-
-    // Getters and Setters (omitted for brevity)
+    // Getters and Setters
 
     public enum ApplicationStatus {
-        PENDING,
-        APPROVED,
-        REJECTED
+        PENDING, APPROVED, REJECTED
     }
 }
