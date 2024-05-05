@@ -1,32 +1,40 @@
+package org.com.estatemate.entities;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+import java.time.LocalDate;
+
+@Getter
+@Setter
 @Entity
 public class Application {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    @ManyToOne
+    private ConcreteUser applicant;
 
-    private String description;
+    @ManyToOne
+    private Property property;
 
     @Enumerated(EnumType.STRING)
     private ApplicationStatus status;
 
     private String message;
 
-    // Consider storing the path or reference to the contract file
-    private String contract;
+    private String contractLink;
 
-    private LocalDateTime contractExpirationDate;
+    private LocalDate contractExpiryDate;
 
-    private String[] images;
-
-    @ManyToOne
-    private User owner;
-
-    // Getters and Setters
-
+    // Getters and setters
     public enum ApplicationStatus {
-        PENDING, APPROVED, REJECTED
+        PENDING,
+        APPROVED,
+        REJECTED
     }
+
 }
