@@ -1,58 +1,54 @@
-## Estate-Mate: A Real Estate Management Application
+Got it! Here's the updated README file without the tenant management section:
 
-**Welcome to Estate-Mate!**
+---
 
-This project provides a foundation for building a real estate management application. It utilizes Spring Data JPA for data persistence and offers services for managing properties, users, applications, roles (optional), and images (if using an Image entity).
+# Estate Mate
 
-**Getting Started:**
+Estate Mate is a web application designed to streamline the management of real estate properties. It provides functionalities for property owners and administrators to manage various aspects of property management efficiently.
 
-**Prerequisites:**
+## Features
 
-* Java 11 or later
-* Maven or Gradle (for building the project)
-* A database server (e.g., MySQL, PostgreSQL)
+- **User Management**: The application supports multiple user roles, including property owners and administrators, each with specific permissions and functionalities.
+- **Property Listings**: Property owners can list their properties on the platform, providing details such as location, amenities, rent, and more.
+- **Administrative Tools**: Administrators have access to administrative tools to manage user accounts, properties, rental agreements, payments, and more.
 
-**Clone the repository:**
+## Technologies Used
 
-```bash
-git clone https://github.com/your-username/estate-mate.git
+- **Java**: The backend of the application is developed using Java, leveraging Spring Boot framework for building robust and scalable web applications.
+- **Spring Boot**: Spring Boot is used for rapid application development, providing features like auto-configuration and embedded web server.
+- **Spring Data JPA**: Spring Data JPA simplifies data access and persistence by providing repositories and query methods for interacting with the database.
+- **Thymeleaf**: Thymeleaf is used as the template engine for server-side rendering of web pages, providing a natural way to build dynamic web applications.
+- **Hibernate**: Hibernate ORM is used for object-relational mapping, simplifying database interactions and providing features like caching and lazy loading.
+- **H2 Database**: H2 is used as an in-memory database during development for quick and lightweight testing of database interactions.
+- **Lombok**: Lombok is used to reduce boilerplate code by generating getters, setters, constructors, and other repetitive code automatically.
+- **Spring Security**: Spring Security is used for authentication and authorization, ensuring secure access to application resources.
+
+## Getting Started
+
+To run the Estate Mate application locally, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Make sure you have Java Development Kit (JDK) installed on your system.
+3. Navigate to the project directory in your terminal or command prompt.
+4. Run the application using the following command:
+
+```
+./mvnw spring-boot:run
 ```
 
-**Configure the database:**
+5. Once the application is running, you can access it in your web browser at `http://localhost:8080`.
 
-* Update the `application.properties` file with your database connection details (URL, username, password).
+## Configuration
 
-**Build the project:**
+- The application configuration can be found in the `application.properties` file located in the `src/main/resources` directory.
+- Modify the configuration properties as needed, such as database connection details, server port, etc.
 
-* Use Maven: `mvn clean install`
-* Use Gradle: `./gradlew build`
+## Contributing
 
-**Run the application:**
+Contributions to the Estate Mate project are welcome! If you have suggestions for new features, improvements, or bug fixes, please feel free to open an issue or submit a pull request.
 
-* You can use a Java IDE or run the application class directly (e.g., `java -jar estate-mate.jar`).
+## License
 
-**Features:**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-* **Entity Classes:**
-    * User
-    * Property
-    * Application (optional relationship with User and Property)
-    * Role (optional)
-    * Image (optional)
-* **Services:**
-    * UserService: CRUD operations for users
-    * PropertyService: CRUD operations for properties, including searching by city
-    * ApplicationService: CRUD operations for applications, including filtering by property and status
-    * RoleService (optional): CRUD operations for roles (for user roles)
-    * ImageService (optional): CRUD operations for images (for property images)
-* **Spring Data JPA:** Provides data persistence and automatic query generation.
-
-**Additional Notes:**
-
-* The `ImageService` is included for managing property images (assuming an `Image` entity exists). If you don't plan to use images, you can disregard this service.
-* The `RoleService` is optional and provides functionalities for managing user roles. You can implement it if needed for your project.
-* Consider adding unit tests for your services and repositories to ensure code quality.
-
-**Contribution:**
-
-Feel free to fork this repository and contribute your improvements!
+---
